@@ -1,16 +1,64 @@
+/* GENERAL STYLES */
+
+html {
+    font-size: 125%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 body {
     max-height: 100vh;
 }
 
+
+/* HEADER STYLES */
+
 header {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Suez One", serif;
+    font-size: 3rem;
+    letter-spacing: 0.15rem;
+    margin: 2% 0;
 }
 
 .userPickSection {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.userPickContent {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: white;
+    /* border: 1px solid grey; */
+    width: 50%;
+    margin: 20% auto;
+    padding-top: 20px;
+    box-shadow: 5px 5px 5px grey;
 }
 
 form {
@@ -21,6 +69,7 @@ form {
 
 #warning {
     visibility: hidden;
+    color: red;
 }
 
 .gameArea {
@@ -29,9 +78,9 @@ form {
     align-items: center;
 }
 
-.hand,
-.handReverse {
-    max-width: 40%;
+.handDiv,
+.handReverseDiv {
+    max-width: 30%;
 }
 
 .handAnimate {

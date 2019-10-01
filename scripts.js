@@ -14,6 +14,20 @@ const results = document.getElementById("results");
 
 const playAgain = document.getElementById("playAgain");
 
+
+const openModal = () => {
+    const modalOpen = document.getElementById("openModal");
+    const userPickSection = document.getElementById("userPickSection")
+
+    modalOpen.addEventListener("click", () => {
+        console.log("click");
+        userPickSection.style.display = "block";
+    })
+}
+
+openModal();
+
+
 const radioButtons = document.getElementsByClassName("userChoice");
 
 // loop over the radio buttons, and add an event listener to each one
@@ -40,24 +54,26 @@ const startAnimation = () => {
         if (userChoice === "") {
             warning.style.visibility = "visible";
         } else {
+            userPickSection.style.display = "none";
+
             hand.classList.add('handAnimate');
             handReverse.classList.add('handReverseAnimate');
 
-            hand.addEventListener("animationend", () => {
+            handReverse.addEventListener("animationend", () => {
                 if (userChoice === "paper") {
-                    hand.setAttribute("src", "./assets/paper.png");
+                    handReverse.setAttribute("src", "./assets/paper-reverse.png");
                 } else if (userChoice === "scissors") {
-                    hand.setAttribute("src", "./assets/scissors.png");
+                    handReverse.setAttribute("src", "./assets/scissors-reverse.png");
                 } else {
                     return;
                 }
             })
 
-            handReverse.addEventListener("animationend", () => {
+            hand.addEventListener("animationend", () => {
                 if (computerChoice === "paper") {
-                    handReverse.setAttribute("src", "./assets/paper-reverse.png");
+                    hand.setAttribute("src", "./assets/paper.png");
                 } else if (computerChoice === "scissors") {
-                    handReverse.setAttribute("src", "./assets/scissors-reverse.png");
+                    hand.setAttribute("src", "./assets/scissors.png");
                 } else {
                     return;
                 }
