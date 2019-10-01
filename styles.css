@@ -4,6 +4,17 @@ html {
     font-size: 125%;
 }
 
+
+h1,
+h2,
+h3,
+ul,
+li,
+p {
+    margin: 0;
+    padding: 0;
+}
+
 img {
     display: block;
     max-width: 100%;
@@ -24,7 +35,6 @@ body {
     max-height: 100vh;
 }
 
-
 /* HEADER STYLES */
 
 header {
@@ -38,7 +48,7 @@ h1 {
     margin: 2% 0;
 }
 
-.userPickSection {
+.userPickModal {
     display: none;
     position: fixed;
     z-index: 5;
@@ -54,17 +64,43 @@ h1 {
     flex-direction: column;
     align-items: center;
     background: white;
-    /* border: 1px solid grey; */
-    width: 50%;
-    margin: 20% auto;
-    padding-top: 20px;
-    box-shadow: 5px 5px 5px grey;
+    width: 70%;
+    margin: 10% auto;
+    padding: 80px 20px;
 }
 
-form {
+ul {
     padding-bottom: 30px;
     text-transform: uppercase;
     font-weight: bold;
+    display: flex;
+}
+
+li {
+    width: 150px;
+    height: 50px;
+    position: relative;
+    margin-right: 30px;
+    border: 1px solid black;
+}
+
+.userPickContent input[type="radio"],
+.userPickContent label {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.userPickContent input[type="radio"] {
+    visibility: hidden;
+    z-index: 100;
+}
+
+.userPickContent input[type="radio"]:checked+label {
+    background: yellow;
 }
 
 #warning {

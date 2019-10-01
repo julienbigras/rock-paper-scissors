@@ -14,20 +14,21 @@ const results = document.getElementById("results");
 
 const playAgain = document.getElementById("playAgain");
 
+// FUNCTION TO OPEN THE USER CHOICE MODAL
 
 const openModal = () => {
     const modalOpen = document.getElementById("openModal");
-    const userPickSection = document.getElementById("userPickSection")
+    const userPickModal = document.getElementById("userPickModal")
 
     modalOpen.addEventListener("click", () => {
         console.log("click");
-        userPickSection.style.display = "block";
+        userPickModal.style.display = "block";
     })
 }
 
 openModal();
 
-
+// get all the elements with the class name of userChoice and save them to a variable
 const radioButtons = document.getElementsByClassName("userChoice");
 
 // loop over the radio buttons, and add an event listener to each one
@@ -54,7 +55,7 @@ const startAnimation = () => {
         if (userChoice === "") {
             warning.style.visibility = "visible";
         } else {
-            userPickSection.style.display = "none";
+            userPickModal.style.display = "none";
 
             hand.classList.add('handAnimate');
             handReverse.classList.add('handReverseAnimate');
