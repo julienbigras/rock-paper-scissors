@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Rock, Paper, Scissors</h1>
+    </header>
+
+    <div class="userPickModal">
+        <form action="">
+            <label for="rock">rock</label>
+            <input type="radio" name="userChoice" class="userChoice" value="rock" id="rock">
+    
+            <label for="paper">paper</label>
+            <input type="radio" name="userChoice" class="userChoice" value="paper" id="paper">
+    
+            <label for="scissors">scissors</label>
+            <input type="radio" name="userChoice" class="userChoice" value="scissors" id="scissors">
+        </form>
+
+        <input type="submit" class="submit" id="submit" value="Let's Go">
+    </div>
+
+    <div class="gameArea">
+        <div class="handReverseDiv">
+            <img id="handReverse" src="./assets/rock-reverse.png" alt="">
+        </div>
+        
+        <div class="handDiv">
+            <img id="hand" src="./assets/rock.png " alt="">
+        </div>
+    </div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+body {
+    max-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.userPickModal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.gameArea {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.handAnimate {
+    animation: hand 0.5s linear 3;
+    transform-origin: bottom right;
+}
+
+.handReverseAnimate {
+    animation: handReverse 0.5s linear 3;
+    transform-origin: bottom left;
+}
+
+@keyframes hand {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(25deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes handReverse {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-25deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
