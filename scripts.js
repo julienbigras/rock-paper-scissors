@@ -8,6 +8,12 @@ let userChoice = "";
 
 const submit = document.getElementById('submit');
 
+const warning = document.getElementById("warning");
+
+const results = document.getElementById("results");
+
+const playAgain = document.getElementById("playAgain");
+
 const radioButtons = document.getElementsByClassName("userChoice");
 
 // loop over the radio buttons, and add an event listener to each one
@@ -15,6 +21,7 @@ for (let i = 0; i < radioButtons.length; i++) {
     radioButtons[i].addEventListener("click", () => {
         // assign the value of the selected radio button to the userChoice variable
         userChoice = radioButtons[i].value;
+        warning.style.visibility = "hidden";
         console.log(userChoice);
     })
 }
@@ -31,7 +38,7 @@ const startAnimation = () => {
         e.preventDefault();
 
         if (userChoice === "") {
-            alert("Please make a selection!");
+            warning.style.visibility = "visible";
         } else {
             hand.classList.add('handAnimate');
             handReverse.classList.add('handReverseAnimate');
@@ -57,27 +64,32 @@ const startAnimation = () => {
             })
 
             setTimeout(() => {
-
-                if (userChoice === "rock" && computerChoice === "scissors") {
-                    alert("You win!");
-                } else if (userChoice === "rock" && computerChoice === "paper") {
-                    alert("You lose!");
-                } else if (userChoice === "rock" && computerChoice === "rock") {
-                    alert("It's a tie!");
-                } else if (userChoice === "paper" && computerChoice === "rock") {
-                    alert("You win!");
-                } else if (userChoice === "paper" && computerChoice === "scissors") {
-                    alert("You lose!");
-                } else if (userChoice === "paper" && computerChoice === "paper") {
-                    alert("It's a tie!");
-                } else if (userChoice === "scissors" && computerChoice === "paper") {
-                    alert("You win!");
-                } else if (userChoice === "scissors" && computerChoice === "rock") {
-                    alert("You lose!");
-                } else if (userChoice === "scissors" && computerChoice === "scissors") {
-                    alert("It's a tie!");
+                if (
+                    userChoice === "rock" && computerChoice === "scissors" ||
+                    userChoice === "paper" && computerChoice === "rock" ||
+                    userChoice === "scissors" && computerChoice === "paper") {
+                        const winMessage = document.createElement('p');
+                        winMessage.innerHTML = "Congrats, you won!";
+                        results.appendChild(winMessage);
+                        playAgain.style.display = "block";
+                } else if (
+                    userChoice === "rock" && computerChoice === "paper" ||
+                    userChoice === "paper" && computerChoice === "scissors" ||
+                    userChoice === "scissors" && computerChoice === "rock") {
+                        const lossMessage = document.createElement('p');
+                        lossMessage.innerHTML = "Bummer, you lost!";
+                        results.appendChild(lossMessage);
+                        playAgain.style.display = "block";
+                } else if (
+                    userChoice === "rock" && computerChoice === "rock" ||
+                    userChoice === "paper" && computerChoice === "paper" ||
+                    userChoice === "scissors" && computerChoice === "scissors") {
+                        const tieMessage = document.createElement('p');
+                        tieMessage.innerHTML = "It's a tie!";
+                        results.appendChild(tieMessage);
+                        playAgain.style.display = "block";
                 }
-            }, 1750)
+            }, 1450)
 
         }
     })
@@ -86,4 +98,15 @@ const startAnimation = () => {
 startAnimation();
 
 
+// playAgain.addEventListener("click", () => {
+//     hand.setAttribute("src", "./assets/rock.png");
+//     handReverse.setAttribute("src", "./assets/rock-reverse.png");
+//     computerChoice = "";
+//     playAgain.style.display = "none";
+//     hand.classList.remove("handAnimate");
+//     handReverse.classList.remove("handReverseAnimate");
+// })
 
+playAgain.addEventListener("click", () => {
+    document.location.reload();
+})

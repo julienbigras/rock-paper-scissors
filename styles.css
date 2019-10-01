@@ -7,7 +7,7 @@ header {
     justify-content: center;
 }
 
-.userPickModal {
+.userPickSection {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,19 +19,28 @@ form {
     font-weight: bold;
 }
 
+#warning {
+    visibility: hidden;
+}
+
 .gameArea {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
+.hand,
+.handReverse {
+    max-width: 40%;
+}
+
 .handAnimate {
-    animation: hand 0.5s linear 3;
+    animation: hand 0.4s linear 3;
     transform-origin: bottom right;
 }
 
 .handReverseAnimate {
-    animation: handReverse 0.5s linear 3;
+    animation: handReverse 0.4s linear 3;
     transform-origin: bottom left;
 }
 
@@ -61,4 +70,8 @@ form {
     100% {
         transform: rotate(0deg);
     }
+}
+
+#playAgain {
+    display: none;
 }
