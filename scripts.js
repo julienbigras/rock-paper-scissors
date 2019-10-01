@@ -10,7 +10,7 @@ const submit = document.getElementById('submit');
 
 const warning = document.getElementById("warning");
 
-const results = document.getElementById("results");
+const results = document.getElementById("resultsContent");
 
 const playAgain = document.getElementById("playAgain");
 
@@ -21,7 +21,6 @@ const openModal = () => {
     const userPickModal = document.getElementById("userPickModal")
 
     modalOpen.addEventListener("click", () => {
-        console.log("click");
         userPickModal.style.display = "block";
     })
 }
@@ -56,6 +55,8 @@ const startAnimation = () => {
             warning.style.visibility = "visible";
         } else {
             userPickModal.style.display = "none";
+
+            document.getElementById("openModal").style.visibility = "hidden";
 
             hand.classList.add('handAnimate');
             handReverse.classList.add('handReverseAnimate');
