@@ -6,15 +6,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .userPickContent {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #41EAD4;
-    border: 10px solid #FBFF12;;
+    background: $secondary;
+    border: 10px solid $accent;
     width: 45%;
     margin: 10% auto;
     padding: 100px 20px 40px;
@@ -67,7 +67,7 @@ li:last-of-type {
 }
 
 .userPickContent input[type="radio"]:checked+label {
-    background: yellow;
+    background: $accent;
 }
 
 #warning {
