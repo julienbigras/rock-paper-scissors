@@ -1,0 +1,282 @@
+html {
+  font-size: 125%;
+}
+
+h1,
+h2,
+h3,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  max-height: 100vh;
+  background: #FF206E;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 3rem;
+  letter-spacing: 0.15rem;
+  margin: 2% 0;
+}
+
+.openModal {
+  margin: 20px auto 30px;
+}
+
+.button {
+  font-weight: bold;
+  padding: 12px 40px;
+  text-transform: uppercase;
+  background: #FBFF12;
+  border: none;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.userPickModal {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.userPickContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #41EAD4;
+  border: 10px solid #FBFF12;
+  width: 45%;
+  margin: 10% auto;
+  padding: 100px 20px 40px;
+}
+
+ul {
+  padding-bottom: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+li {
+  width: 150px;
+  height: 50px;
+  position: relative;
+  background: white;
+  margin-right: 30px;
+  border: 3px solid black;
+  -webkit-box-shadow: 5px 5px 5px grey;
+          box-shadow: 5px 5px 5px grey;
+}
+
+li:last-of-type {
+  margin-right: 0;
+}
+
+.userPickContent input[type="radio"],
+.userPickContent label {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.userPickContent label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.userPickContent input[type="radio"] {
+  visibility: hidden;
+  z-index: 100;
+}
+
+.userPickContent label:hover {
+  cursor: pointer;
+}
+
+.userPickContent input[type="radio"]:checked + label {
+  background: yellow;
+}
+
+#warning {
+  visibility: hidden;
+  font-weight: bold;
+  color: red;
+  margin-top: 35px;
+  font-family: "Patua One", serif;
+  letter-spacing: 0.05em;
+}
+
+.gameArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2%;
+}
+
+.handDiv,
+.handReverseDiv {
+  max-width: 35%;
+}
+
+.hand,
+.handReverse {
+  border: 10px solid yellow;
+}
+
+.handAnimate {
+  -webkit-animation: hand 0.4s linear 3;
+          animation: hand 0.4s linear 3;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.handReverseAnimate {
+  -webkit-animation: handReverse 0.4s linear 3;
+          animation: handReverse 0.4s linear 3;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+@-webkit-keyframes hand {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(25deg);
+            transform: rotate(25deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes hand {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(25deg);
+            transform: rotate(25deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes handReverse {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes handReverse {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+.results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.results p {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.results #playAgain {
+  display: none;
+}
+/*# sourceMappingURL=styles.css.map */

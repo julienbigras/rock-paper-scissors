@@ -1,0 +1,26 @@
+header {
+    text-align: center;
+}
+
+h1 {
+    font-family: $mainFont, cursive;
+    font-size: 3rem;
+    letter-spacing: 0.15rem;
+    margin: 2% 0;
+}
+
+.openModal {
+    margin: 20px auto 30px;
+}
+
+.button {
+    font-weight: bold;
+    padding: 12px 40px;
+    text-transform: uppercase;
+    background: $accent;
+    border: none;
+}
+
+.button:hover {
+    cursor: pointer;
+}

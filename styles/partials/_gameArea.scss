@@ -1,0 +1,54 @@
+.gameArea {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.handDiv,
+.handReverseDiv {
+    max-width: 35%;
+}
+
+.hand,
+.handReverse {
+    border: 10px solid yellow;
+}
+
+.handAnimate {
+    animation: hand 0.4s linear 3;
+    transform-origin: bottom right;
+}
+
+.handReverseAnimate {
+    animation: handReverse 0.4s linear 3;
+    transform-origin: bottom left;
+}
+
+@keyframes hand {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(25deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes handReverse {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-25deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}

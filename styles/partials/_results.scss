@@ -1,0 +1,15 @@
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    #playAgain {
+        display: none;
+    }
+}
