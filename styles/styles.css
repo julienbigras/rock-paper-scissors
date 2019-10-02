@@ -7,7 +7,10 @@ h2,
 h3,
 ul,
 li,
-p {
+p,
+section,
+aside,
+body {
   margin: 0;
   padding: 0;
 }
@@ -31,6 +34,9 @@ a {
 body {
   max-height: 100vh;
   background: #FF206E;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 header {
@@ -173,7 +179,7 @@ li:last-of-type {
 
 .handDiv,
 .handReverseDiv {
-  max-width: 35%;
+  max-width: 40%;
 }
 
 .hand,
@@ -271,16 +277,6 @@ li:last-of-type {
           align-items: center;
 }
 
-.results .scoreboard {
-  width: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
 .results p {
   font-weight: bold;
   text-transform: uppercase;
@@ -290,5 +286,27 @@ li:last-of-type {
 
 .results #playAgain {
   display: none;
+}
+
+.scoreboard {
+  background: #41EAD4;
+  height: 100vh;
+  width: 22.5%;
+  font-family: "Luckiest Guy";
+  font-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-left: 10px solid #FBFF12;
 }
 /*# sourceMappingURL=styles.css.map */

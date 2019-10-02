@@ -1,0 +1,12 @@
+.scoreboard {
+    background: $secondary;
+    height: 100vh;
+    width: 22.5%;
+    font-family: "Luckiest Guy";
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 10px solid $accent;
+}

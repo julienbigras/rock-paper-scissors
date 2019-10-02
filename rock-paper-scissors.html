@@ -11,54 +11,57 @@
 </head>
 <body>
 
-    <header>
-        <h1>Rock, Paper, Scissors</h1>
-        <button class="openModal button" id="openModal">Choose Your Weapon!</button>
-    </header>
-
-    <main>
-        <div class="userPickModal" id="userPickModal">
-            <div class="userPickContent" id="userPickContent">
-                <ul>
-                    <li>
-                        <input type="radio" name="userChoice" class="userChoice" value="rock" id="rock">
-                        <label class="label" for="rock">rock</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="userChoice" class="userChoice" value="paper" id="paper">
-                        <label class="label" for="paper">paper</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="userChoice" class="userChoice" value="scissors" id="scissors">
-                        <label class="label" for="scissors">scissors</label>
-                    </li>
-                </ul>
-        
-                <input type="submit" class="submit button" id="submit" value="Let's Go">
-                <p id="warning">Please make a selection first!</p>
-            </div>
-        </div>
+    <section class="gameContent">
+        <header>
+            <h1>Rock, Paper, Scissors</h1>
+            <button class="openModal button" id="openModal">Choose Your Weapon!</button>
+        </header>
     
-        <section class="gameArea">
-            <div class="handReverseDiv">
-                <img id="handReverse" src="./assets/rock-reverse.png" alt="">
-            </div>
+        <main>
+            <div class="userPickModal" id="userPickModal">
+                <div class="userPickContent" id="userPickContent">
+                    <ul>
+                        <li>
+                            <input type="radio" name="userChoice" class="userChoice" value="rock" id="rock">
+                            <label class="label" for="rock">rock</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="userChoice" class="userChoice" value="paper" id="paper">
+                            <label class="label" for="paper">paper</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="userChoice" class="userChoice" value="scissors" id="scissors">
+                            <label class="label" for="scissors">scissors</label>
+                        </li>
+                    </ul>
             
-            <div class="handDiv">
-                <img id="hand" src="./assets/rock.png " alt="">
+                    <input type="submit" class="submit button" id="submit" value="Let's Go">
+                    <p id="warning">Please make a selection first!</p>
+                </div>
             </div>
-        </section>
-
-        <section class="results" id="results">
-            <div class="scoreboard">
-                <p id="wins">Wins: <span id="winCount">0</span></p>
-                <p id="losses">Losses: <span id="lossCount">0</span></p>
-                <p id="draw">Draws: <span id="drawCount">0</span></p>
-            </div>
-            <div class="resultsContent" id="resultsContent"></div>
-            <button class="button" id="playAgain">Play Again</button>
-        </section>
-    </main>
+        
+            <section class="gameArea">
+                <div class="handReverseDiv">
+                    <img id="handReverse" src="./assets/rock-reverse.png" alt="">
+                </div>
+                
+                <div class="handDiv">
+                    <img id="hand" src="./assets/rock.png " alt="">
+                </div>
+            </section>
+    
+            <section class="results" id="results">
+                
+                <div class="resultsContent" id="resultsContent"></div>
+                <button class="button" id="playAgain">Play Again</button>
+            </section>
+        </main>
+    </section>
+    <aside class="scoreboard">
+        <p id="wins">Wins: <span id="winCount">0</span></p>
+        <p id="losses">Losses: <span id="lossCount">0</span></p>
+        <p id="draw">Draws: <span id="drawCount">0</span></p>
+    </aside>
 
 
 <script src="scripts.js"></script>
