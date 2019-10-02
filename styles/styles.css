@@ -271,6 +271,16 @@ li:last-of-type {
           align-items: center;
 }
 
+.results .scoreboard {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .results p {
   font-weight: bold;
   text-transform: uppercase;

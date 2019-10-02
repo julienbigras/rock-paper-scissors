@@ -18,8 +18,15 @@ const results = document.getElementById("resultsContent");
 
 const playAgain = document.getElementById("playAgain");
 
-
 const resultsMessage = document.createElement('p');
+
+let winCount = 0;
+let lossCount = 0;
+let drawCount = 0;
+
+const winCountDisplay = document.getElementById("winCount");
+const lossCountDisplay = document.getElementById("lossCount");
+const drawCountDisplay = document.getElementById("drawCount");
 
 // FUNCTION TO OPEN THE USER CHOICE MODAL
 
@@ -98,6 +105,8 @@ const startAnimation = () => {
                     userChoice === "scissors" && computerChoice === "paper") {
                         resultsMessage.innerHTML = "Congrats, you win!";
                         results.appendChild(resultsMessage);
+                        winCount++;
+                        winCountDisplay.innerHTML = `${winCount}`;
                         playAgain.style.display = "block";
                 } else if (
                     userChoice === "rock" && computerChoice === "paper" ||
@@ -105,13 +114,17 @@ const startAnimation = () => {
                     userChoice === "scissors" && computerChoice === "rock") {
                         resultsMessage.innerHTML = "Bummer, you lose!";
                         results.appendChild(resultsMessage);
+                        lossCount++;
+                        lossCountDisplay.innerHTML = `${lossCount}`;
                         playAgain.style.display = "block";
                 } else if (
                     userChoice === "rock" && computerChoice === "rock" ||
                     userChoice === "paper" && computerChoice === "paper" ||
                     userChoice === "scissors" && computerChoice === "scissors") {
-                        resultsMessage.innerHTML = "It's a tie!";
+                        resultsMessage.innerHTML = "It's a draw!";
                         results.appendChild(resultsMessage);
+                        drawCount++;
+                        drawCountDisplay.innerHTML = `${drawCount}`;
                         playAgain.style.display = "block";
                 }
             }, 1450)
@@ -149,7 +162,3 @@ playAgain.addEventListener("click", () => {
     // remove the previous results message
     results.removeChild(resultsMessage)
 })
-
-// playAgain.addEventListener("click", () => {
-//     document.location.reload();
-// })

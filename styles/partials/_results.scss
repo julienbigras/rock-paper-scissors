@@ -3,6 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .scoreboard {
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+    }
     p {
         font-weight: bold;
         text-transform: uppercase;
