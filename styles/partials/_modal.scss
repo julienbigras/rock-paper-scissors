@@ -6,75 +6,76 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.75);
+    .userPickContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: $secondary;
+        border: 10px solid $accent;
+        width: 45%;
+        margin: 8.5% auto;
+        padding: 60px 20px 20px;
+        ul {
+        padding-bottom: 60px;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: flex;
+            li {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                position: relative;
+                background: white;
+                margin-right: 45px;
+                border: 3px solid black;
+                box-shadow: 5px 5px 5px grey;
+            }
+            li:last-of-type {
+                margin-right: 0;
+            }
+        }
+        input[type="radio"],
+        label {
+            position: absolute;
+            display: block;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 50%;
+        }
+        input[type="radio"] {
+            visibility: hidden;
+            z-index: 100;
+        }
+        input[type="radio"]:checked+label {
+            background: $primary;
+            color: $secondary;
+            text-shadow:
+                    -1px -1px black,
+                    1px 1px black,
+                    2px -2px $accent,
+        }
+        label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: $mainFont;
+        }
+        label:hover {
+            cursor: pointer;
+        }
+        #warning {
+            visibility: hidden;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: $primary;
+            text-shadow: 1px 1px black, -1px -1px black;
+            margin-top: 20px;
+            font-family: $mainFont;
+            letter-spacing: 0.05em;
+        }
+    }
 }
 
-.userPickContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: $secondary;
-    border: 10px solid $accent;
-    width: 45%;
-    margin: 10% auto;
-    padding: 100px 20px 40px;
-}
-
-ul {
-    padding-bottom: 60px;
-    text-transform: uppercase;
-    font-weight: bold;
-    display: flex;
-}
-
-li {
-    width: 150px;
-    height: 50px;
-    position: relative;
-    background: white;
-    margin-right: 30px;
-    border: 3px solid black;
-    box-shadow: 5px 5px 5px grey;
-}
-
-li:last-of-type {
-    margin-right: 0;
-}
-
-.userPickContent input[type="radio"],
-.userPickContent label {
-    position: absolute;
-    display: block;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.userPickContent label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.userPickContent input[type="radio"] {
-    visibility: hidden;
-    z-index: 100;
-}
-
-.userPickContent label:hover {
-    cursor: pointer;
-}
-
-.userPickContent input[type="radio"]:checked+label {
-    background: $accent;
-}
-
-#warning {
-    visibility: hidden;
-    font-weight: bold;
-    color: red;
-    margin-top: 35px;
-    font-family: "Patua One", serif;
-    letter-spacing: 0.05em;
-}

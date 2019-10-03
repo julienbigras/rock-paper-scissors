@@ -39,26 +39,10 @@ body {
   display: flex;
 }
 
-header {
-  text-align: center;
-}
-
-h1 {
-  font-family: "Luckiest Guy", cursive;
-  font-size: 3.5rem;
-  letter-spacing: 0.25rem;
-  margin: 2% 0;
-  color: #41EAD4;
-  text-shadow: -1px -1px black, 1px 1px black, 2px -2px #FBFF12, 3px -3px black, 4px -4px #FBFF12, 5px -5px black, 6px -6px #FBFF12, 7px -7px black, 8px -8px #FBFF12, 9px -9px black;
-}
-
-.openModal {
-  margin: 20px auto 30px;
-}
-
 .button {
   font-weight: bold;
-  padding: 12px 40px;
+  font-size: 0.8rem;
+  padding: 15px 40px;
   text-transform: uppercase;
   background: #FBFF12;
   border: none;
@@ -66,6 +50,30 @@ h1 {
 
 .button:hover {
   cursor: pointer;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 3.5rem;
+  letter-spacing: 0.25rem;
+  margin: 2% 1%;
+  color: #41EAD4;
+  text-shadow: -1px -1px black, 1px 1px black, 2px -2px #FBFF12, 3px -3px black, 4px -4px #FBFF12, 5px -5px black, 6px -6px #FBFF12, 7px -7px black, 8px -8px #FBFF12, 9px -9px black;
+}
+
+header .openModal {
+  margin: 30px auto 0;
+  -webkit-box-shadow: 1px -1px #41EAD4, 2px -2px #41EAD4, 3px -3px #41EAD4, 4px -4px #41EAD4, 5px -5px #41EAD4, 6px -6px #41EAD4, 7px -7px #41EAD4, 8px -8px #41EAD4, 9px -9px #41EAD4;
+          box-shadow: 1px -1px #41EAD4, 2px -2px #41EAD4, 3px -3px #41EAD4, 4px -4px #41EAD4, 5px -5px #41EAD4, 6px -6px #41EAD4, 7px -7px #41EAD4, 8px -8px #41EAD4, 9px -9px #41EAD4;
+}
+
+header .openModal:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .userPickModal {
@@ -76,10 +84,10 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.75);
 }
 
-.userPickContent {
+.userPickModal .userPickContent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,11 +101,11 @@ h1 {
   background: #41EAD4;
   border: 10px solid #FBFF12;
   width: 45%;
-  margin: 10% auto;
-  padding: 100px 20px 40px;
+  margin: 8.5% auto;
+  padding: 60px 20px 20px;
 }
 
-ul {
+.userPickModal .userPickContent ul {
   padding-bottom: 60px;
   text-transform: uppercase;
   font-weight: bold;
@@ -106,32 +114,45 @@ ul {
   display: flex;
 }
 
-li {
-  width: 150px;
-  height: 50px;
+.userPickModal .userPickContent ul li {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
   position: relative;
   background: white;
-  margin-right: 30px;
+  margin-right: 45px;
   border: 3px solid black;
   -webkit-box-shadow: 5px 5px 5px grey;
           box-shadow: 5px 5px 5px grey;
 }
 
-li:last-of-type {
+.userPickModal .userPickContent ul li:last-of-type {
   margin-right: 0;
 }
 
-.userPickContent input[type="radio"],
-.userPickContent label {
+.userPickModal .userPickContent input[type="radio"],
+.userPickModal .userPickContent label {
   position: absolute;
   display: block;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  border-radius: 50%;
 }
 
-.userPickContent label {
+.userPickModal .userPickContent input[type="radio"] {
+  visibility: hidden;
+  z-index: 100;
+}
+
+.userPickModal .userPickContent input[type="radio"]:checked + label {
+  background: #FF206E;
+  color: #41EAD4;
+  text-shadow: -1px -1px black, 1px 1px black, 2px -2px #FBFF12;
+}
+
+.userPickModal .userPickContent label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -141,27 +162,21 @@ li:last-of-type {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: "Luckiest Guy";
 }
 
-.userPickContent input[type="radio"] {
-  visibility: hidden;
-  z-index: 100;
-}
-
-.userPickContent label:hover {
+.userPickModal .userPickContent label:hover {
   cursor: pointer;
 }
 
-.userPickContent input[type="radio"]:checked + label {
-  background: #FBFF12;
-}
-
-#warning {
+.userPickModal .userPickContent #warning {
   visibility: hidden;
   font-weight: bold;
-  color: red;
-  margin-top: 35px;
-  font-family: "Patua One", serif;
+  font-size: 1.2rem;
+  color: #FF206E;
+  text-shadow: 1px 1px black, -1px -1px black;
+  margin-top: 20px;
+  font-family: "Luckiest Guy";
   letter-spacing: 0.05em;
 }
 
@@ -174,27 +189,31 @@ li:last-of-type {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 2%;
+  margin: 5% 0 2%;
 }
 
-.handDiv,
-.handReverseDiv {
-  max-width: 40%;
+.gameArea .handContainer,
+.gameArea .handReverseContainer {
+  text-align: center;
+  width: 40%;
 }
 
-.hand,
-.handReverse {
-  border: 10px solid yellow;
+.gameArea .handContainer h3,
+.gameArea .handReverseContainer h3 {
+  font-family: "Luckiest Guy";
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: #FBFF12;
 }
 
-.handAnimate {
+.gameArea .handAnimate {
   -webkit-animation: hand 0.4s linear 3;
           animation: hand 0.4s linear 3;
   -webkit-transform-origin: bottom right;
           transform-origin: bottom right;
 }
 
-.handReverseAnimate {
+.gameArea .handReverseAnimate {
   -webkit-animation: handReverse 0.4s linear 3;
           animation: handReverse 0.4s linear 3;
   -webkit-transform-origin: bottom left;
@@ -275,25 +294,34 @@ li:last-of-type {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #41EAD4;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .results p {
   font-weight: bold;
   text-transform: uppercase;
+  font-family: "Luckiest Guy";
   font-size: 1.5rem;
-  margin-bottom: 15px;
+  padding: 40px 30px 20px;
 }
 
 .results #playAgain {
   display: none;
+  margin-bottom: 40px;
+}
+
+.resultsBorder {
+  border: 5px solid #FBFF12;
 }
 
 .scoreboard {
   background: #41EAD4;
   height: 100vh;
-  width: 22.5%;
+  width: 25%;
   font-family: "Luckiest Guy";
-  font-size: 2rem;
+  font-size: 1.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -308,5 +336,25 @@ li:last-of-type {
       -ms-flex-pack: center;
           justify-content: center;
   border-left: 10px solid #FBFF12;
+}
+
+.scoreboard h3 {
+  font-size: 2.5rem;
+  padding: 10px;
+  margin-bottom: 60px;
+  color: #FBFF12;
+  text-shadow: -1px -1px black, 1px 1px black, 2px -2px #FF206E, 3px -3px black, 4px -4px #FF206E, 5px -5px black, 6px -6px #FF206E, 7px -7px black, 8px -8px #FF206E, 9px -9px black;
+}
+
+.scoreboard #wins,
+.scoreboard #losses {
+  margin-bottom: 10%;
+}
+
+.scoreboard span {
+  background: #FBFF12;
+  display: inline-block;
+  text-align: center;
+  width: 50px;
 }
 /*# sourceMappingURL=styles.css.map */

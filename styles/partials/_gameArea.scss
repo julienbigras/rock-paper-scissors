@@ -2,28 +2,29 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 2%;
+    margin: 5% 0 2%;
+    .handContainer,
+    .handReverseContainer {
+        text-align: center;
+        width: 40%;
+        h3 {
+            font-family: $mainFont;
+            text-transform: uppercase;
+            font-size: 2rem;
+            color: $accent;
+        }
+    }
+    .handAnimate {
+        animation: hand 0.4s linear 3;
+        transform-origin: bottom right;
+    }
+    .handReverseAnimate {
+        animation: handReverse 0.4s linear 3;
+        transform-origin: bottom left;
+    }
 }
 
-.handDiv,
-.handReverseDiv {
-    max-width: 40%;
-}
-
-.hand,
-.handReverse {
-    border: 10px solid yellow;
-}
-
-.handAnimate {
-    animation: hand 0.4s linear 3;
-    transform-origin: bottom right;
-}
-
-.handReverseAnimate {
-    animation: handReverse 0.4s linear 3;
-    transform-origin: bottom left;
-}
+// ANIMATIONS
 
 @keyframes hand {
     0% {

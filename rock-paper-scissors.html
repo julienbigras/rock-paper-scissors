@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <section class="gameContent">
+    <div class="gameContent">
         <header>
             <h1>Rock, Paper, Scissors</h1>
             <button class="openModal button" id="openModal">Choose Your Weapon!</button>
@@ -41,26 +41,35 @@
             </div>
         
             <section class="gameArea">
-                <div class="handReverseDiv">
-                    <img id="handReverse" src="./assets/rock-reverse.png" alt="">
+                <div class="handReverseContainer">
+                    <div class="handReverseDiv">
+                        <img id="handReverse" src="./assets/rock-reverse.png" alt="">
+                    </div>
+                    <h3 class="playerLabel">You</h3>
                 </div>
                 
-                <div class="handDiv">
-                    <img id="hand" src="./assets/rock.png " alt="">
+                <div class="handContainer">
+                    <div class="handDiv">
+                        <img id="hand" src="./assets/rock.png " alt="">
+                    </div>
+                    <h3 class="playerLabel">cpu</h3>
                 </div>
             </section>
     
             <section class="results" id="results">
-                
                 <div class="resultsContent" id="resultsContent"></div>
                 <button class="button" id="playAgain">Play Again</button>
             </section>
         </main>
-    </section>
+    </div>
+    
     <aside class="scoreboard">
-        <p id="wins">Wins: <span id="winCount">0</span></p>
-        <p id="losses">Losses: <span id="lossCount">0</span></p>
-        <p id="draw">Draws: <span id="drawCount">0</span></p>
+        <h3>Score</h3>
+        <div class="score">
+            <p id="wins">Wins: <span id="winCount">0</span></p>
+            <p id="losses">Losses: <span id="lossCount">0</span></p>
+            <p id="draw">Draws: <span id="drawCount">0</span></p>
+        </div>
     </aside>
 
 

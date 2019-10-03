@@ -16,6 +16,8 @@ const warning = document.getElementById("warning");
 
 const results = document.getElementById("resultsContent");
 
+const playerLabel = document.getElementsByClassName("playerLabel");
+
 const playAgain = document.getElementById("playAgain");
 
 const resultsMessage = document.createElement('p');
@@ -48,8 +50,9 @@ for (let i = 0; i < radioButtons.length; i++) {
     radioButtons[i].addEventListener("click", () => {
         // assign the value of the selected radio button to the userChoice variable
         userChoice = radioButtons[i].value;
+
+        // hides the warning message, if it was displayed
         warning.style.visibility = "hidden";
-        console.log(userChoice, "user choice");
     })
 }
 
@@ -58,8 +61,43 @@ const getComputerChoice = () => {
     return gameOptions[Math.floor(Math.random() * gameOptions.length)];
 }
 
+// assign the result of the getComputerChoice function to the computerChoice variable
 let computerChoice = getComputerChoice();
-console.log(computerChoice, "computer choice");
+
+// define the function that determines the winner of the round
+const determineOutcome = () => {
+    setTimeout(() => {
+
+        if (
+            userChoice === "rock" && computerChoice === "scissors" ||
+            userChoice === "paper" && computerChoice === "rock" ||
+            userChoice === "scissors" && computerChoice === "paper") {
+            resultsMessage.innerHTML = "Congrats, you win!";
+            results.appendChild(resultsMessage);
+            winCount++;
+            winCountDisplay.innerHTML = `${winCount}`;
+            playAgain.style.display = "block";
+        } else if (
+            userChoice === "rock" && computerChoice === "paper" ||
+            userChoice === "paper" && computerChoice === "scissors" ||
+            userChoice === "scissors" && computerChoice === "rock") {
+            resultsMessage.innerHTML = "Bummer, you lose!";
+            results.appendChild(resultsMessage);
+            lossCount++;
+            lossCountDisplay.innerHTML = `${lossCount}`;
+            playAgain.style.display = "block";
+        } else if (
+            userChoice === "rock" && computerChoice === "rock" ||
+            userChoice === "paper" && computerChoice === "paper" ||
+            userChoice === "scissors" && computerChoice === "scissors") {
+            resultsMessage.innerHTML = "It's a draw!";
+            results.appendChild(resultsMessage);
+            drawCount++;
+            drawCountDisplay.innerHTML = `${drawCount}`;
+            playAgain.style.display = "block";
+        }
+    }, 1450)
+}
 
 const startAnimation = () => {
     const hand = document.getElementById('hand');
@@ -71,13 +109,21 @@ const startAnimation = () => {
         if (userChoice === "") {
             warning.style.visibility = "visible";
         } else {
+            // close the modal
             userPickModal.style.display = "none";
+            //hide the openModal button
+            document.getElementById("openModal").style.display = "none";
 
-            document.getElementById("openModal").style.visibility = "hidden";
+            // loop over the elements with the class of playerLabel and hide them
+            for (i = 0; i < playerLabel.length; i++) {
+                playerLabel[i].style.display = "none";
+            }
 
+            // add classes to the hand images in order to animate them
             hand.classList.add('handAnimate');
             handReverse.classList.add('handReverseAnimate');
 
+            // update the hand images to correspond to the user and computer choice, once animation ends
             handReverse.addEventListener("animationend", () => {
                 if (userChoice === "paper") {
                     handReverse.setAttribute("src", "./assets/paper-reverse.png");
@@ -97,52 +143,21 @@ const startAnimation = () => {
                     return;
                 }
             })
-
-            setTimeout(() => {
-                if (
-                    userChoice === "rock" && computerChoice === "scissors" ||
-                    userChoice === "paper" && computerChoice === "rock" ||
-                    userChoice === "scissors" && computerChoice === "paper") {
-                        resultsMessage.innerHTML = "Congrats, you win!";
-                        results.appendChild(resultsMessage);
-                        winCount++;
-                        winCountDisplay.innerHTML = `${winCount}`;
-                        playAgain.style.display = "block";
-                } else if (
-                    userChoice === "rock" && computerChoice === "paper" ||
-                    userChoice === "paper" && computerChoice === "scissors" ||
-                    userChoice === "scissors" && computerChoice === "rock") {
-                        resultsMessage.innerHTML = "Bummer, you lose!";
-                        results.appendChild(resultsMessage);
-                        lossCount++;
-                        lossCountDisplay.innerHTML = `${lossCount}`;
-                        playAgain.style.display = "block";
-                } else if (
-                    userChoice === "rock" && computerChoice === "rock" ||
-                    userChoice === "paper" && computerChoice === "paper" ||
-                    userChoice === "scissors" && computerChoice === "scissors") {
-                        resultsMessage.innerHTML = "It's a draw!";
-                        results.appendChild(resultsMessage);
-                        drawCount++;
-                        drawCountDisplay.innerHTML = `${drawCount}`;
-                        playAgain.style.display = "block";
-                }
-            }, 1450)
-
+            
+            // run the determineOutcome function
+            determineOutcome();
         }
     })
 }
 
 startAnimation();
 
-
 playAgain.addEventListener("click", () => {
     // reset the userChoice and computerChoice variables
     computerChoice = getComputerChoice();
-    console.log(computerChoice);
     userChoice = "";
     // show the openModal button
-    modalOpen.style.visibility = "visible";
+    modalOpen.style.display = "block";
     // reset the radio buttons
     radioButtons.checked = false;
 
@@ -157,6 +172,10 @@ playAgain.addEventListener("click", () => {
     // remove the animate classes from each of the hand images
     hand.classList.remove("handAnimate");
     handReverse.classList.remove("handReverseAnimate");
+    // show the player labels
+    for (i = 0; i < playerLabel.length; i++) {
+        playerLabel[i].style.display = "block";
+    }
     // hide the play again button
     playAgain.style.display = "none";
     // remove the previous results message

@@ -36,3 +36,16 @@ body {
     background: $primary;
     display: flex;
 }
+
+.button {
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    background: $accent;
+    border: none;
+}
+
+.button:hover {
+    cursor: pointer;
+}
