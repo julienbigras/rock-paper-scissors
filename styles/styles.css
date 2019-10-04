@@ -189,7 +189,7 @@ header .openModal:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 5% 0 2%;
+  margin: 5% 0 3.5%;
 }
 
 .gameArea .handContainer,
@@ -304,16 +304,16 @@ header .openModal:active {
   text-transform: uppercase;
   font-family: "Luckiest Guy";
   font-size: 1.5rem;
-  padding: 40px 30px 20px;
+  padding: 30px 30px 20px;
 }
 
 .results #playAgain {
   display: none;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .resultsBorder {
-  border: 5px solid #FBFF12;
+  border: 10px solid #FBFF12;
 }
 
 .scoreboard {

@@ -11,14 +11,14 @@
         text-transform: uppercase;
         font-family: $mainFont;
         font-size: 1.5rem;
-        padding: 40px 30px 20px;
+        padding: 30px 30px 20px;
     }
     #playAgain {
         display: none;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
 }
 
 .resultsBorder {
-    border: 5px solid $accent;
+    border: 10px solid $accent;
 }

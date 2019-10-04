@@ -14,7 +14,9 @@ const submit = document.getElementById('submit');
 
 const warning = document.getElementById("warning");
 
-const results = document.getElementById("resultsContent");
+const results = document.getElementById("results");
+
+const resultsContent = document.getElementById("resultsContent");
 
 const playerLabel = document.getElementsByClassName("playerLabel");
 
@@ -73,7 +75,8 @@ const determineOutcome = () => {
             userChoice === "paper" && computerChoice === "rock" ||
             userChoice === "scissors" && computerChoice === "paper") {
             resultsMessage.innerHTML = "Congrats, you win!";
-            results.appendChild(resultsMessage);
+            results.classList.add("resultsBorder");
+            resultsContent.appendChild(resultsMessage);
             winCount++;
             winCountDisplay.innerHTML = `${winCount}`;
             playAgain.style.display = "block";
@@ -82,7 +85,8 @@ const determineOutcome = () => {
             userChoice === "paper" && computerChoice === "scissors" ||
             userChoice === "scissors" && computerChoice === "rock") {
             resultsMessage.innerHTML = "Bummer, you lose!";
-            results.appendChild(resultsMessage);
+            results.classList.add("resultsBorder");
+            resultsContent.appendChild(resultsMessage);
             lossCount++;
             lossCountDisplay.innerHTML = `${lossCount}`;
             playAgain.style.display = "block";
@@ -91,7 +95,8 @@ const determineOutcome = () => {
             userChoice === "paper" && computerChoice === "paper" ||
             userChoice === "scissors" && computerChoice === "scissors") {
             resultsMessage.innerHTML = "It's a draw!";
-            results.appendChild(resultsMessage);
+            results.classList.add("resultsBorder");
+            resultsContent.appendChild(resultsMessage);
             drawCount++;
             drawCountDisplay.innerHTML = `${drawCount}`;
             playAgain.style.display = "block";
@@ -159,13 +164,9 @@ playAgain.addEventListener("click", () => {
     // show the openModal button
     modalOpen.style.display = "block";
     // reset the radio buttons
-    radioButtons.checked = false;
-
-    // reset the color of the radio button label
-    // for (i = 0; i < label.length; i++) {
-    //     label[i].style.background = "white";
-    // }
-
+    for (i = 0; i < radioButtons.length; i++) {
+        radioButtons[i].checked = false;
+    }
     // change the two hand images back to their original source files
     hand.setAttribute("src", "./assets/rock.png");
     handReverse.setAttribute("src", "./assets/rock-reverse.png");
@@ -179,5 +180,7 @@ playAgain.addEventListener("click", () => {
     // hide the play again button
     playAgain.style.display = "none";
     // remove the previous results message
-    results.removeChild(resultsMessage)
+    resultsContent.removeChild(resultsMessage)
+    // remove the border class from the results section
+    results.classList.remove("resultsBorder");
 })
