@@ -41,12 +41,13 @@ body {
 
 .button {
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding: 15px 40px;
   text-transform: uppercase;
   background: #FBFF12;
   border: 3px solid black;
   border-radius: 30px;
+  font-family: "Luckiest Guy";
 }
 
 .button:hover {
@@ -70,9 +71,11 @@ header .openModal {
   margin: 30px auto 0;
 }
 
-header .openModal:active {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+header .openModal:hover,
+header .openModal:focus {
+  background: #41EAD4;
+  color: #FBFF12;
+  text-shadow: 1px 1px black, -1px -1px black;
 }
 
 .userPickModal {
@@ -141,7 +144,8 @@ header .openModal:active {
 }
 
 .userPickModal .userPickContent input[type="radio"] {
-  visibility: hidden;
+  visibility: visible;
+  opacity: 0;
   z-index: 100;
 }
 
@@ -166,6 +170,13 @@ header .openModal:active {
 
 .userPickModal .userPickContent label:hover {
   cursor: pointer;
+}
+
+.userPickModal .userPickContent input[type="submit"]:hover,
+.userPickModal .userPickContent input[type="submit"]:focus {
+  background: #FF206E;
+  color: #FBFF12;
+  text-shadow: 1px 1px black, -1px -1px black;
 }
 
 .userPickModal .userPickContent #warning {
@@ -295,7 +306,7 @@ header .openModal:active {
       -ms-flex-align: center;
           align-items: center;
   background: #41EAD4;
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
 }
 
@@ -304,12 +315,19 @@ header .openModal:active {
   text-transform: uppercase;
   font-family: "Luckiest Guy";
   font-size: 1.5rem;
-  padding: 30px 30px 20px;
+  padding: 25px 30px 20px;
 }
 
 .results #playAgain {
   display: none;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+}
+
+.results #playAgain:hover,
+.results #playAgain:focus {
+  background: #FF206E;
+  color: #FBFF12;
+  text-shadow: 1px 1px black, -1px -1px black;
 }
 
 .resultsBorder {

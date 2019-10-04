@@ -20,18 +20,11 @@ header {
     }
     .openModal {
         margin: 30px auto 0;
-        // box-shadow:
-        //     1px -1px $secondary,
-        //     2px -2px $secondary,
-        //     3px -3px $secondary,
-        //     4px -4px $secondary,
-        //     5px -5px $secondary,
-        //     6px -6px $secondary,
-        //     7px -7px $secondary,
-        //     8px -8px $secondary,
-        //     9px -9px $secondary;
     }
-    .openModal:active {
-        box-shadow: none;
+    .openModal:hover,
+    .openModal:focus {
+        background: $secondary;
+        color: $accent;
+        text-shadow: 1px 1px black, -1px -1px black;
     }
 }
