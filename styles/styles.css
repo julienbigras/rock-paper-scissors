@@ -45,7 +45,8 @@ body {
   padding: 15px 40px;
   text-transform: uppercase;
   background: #FBFF12;
-  border: none;
+  border: 3px solid black;
+  border-radius: 30px;
 }
 
 .button:hover {
@@ -67,8 +68,6 @@ header h1 {
 
 header .openModal {
   margin: 30px auto 0;
-  -webkit-box-shadow: 1px -1px #41EAD4, 2px -2px #41EAD4, 3px -3px #41EAD4, 4px -4px #41EAD4, 5px -5px #41EAD4, 6px -6px #41EAD4, 7px -7px #41EAD4, 8px -8px #41EAD4, 9px -9px #41EAD4;
-          box-shadow: 1px -1px #41EAD4, 2px -2px #41EAD4, 3px -3px #41EAD4, 4px -4px #41EAD4, 5px -5px #41EAD4, 6px -6px #41EAD4, 7px -7px #41EAD4, 8px -8px #41EAD4, 9px -9px #41EAD4;
 }
 
 header .openModal:active {
@@ -204,6 +203,7 @@ header .openModal:active {
   text-transform: uppercase;
   font-size: 2rem;
   color: #FBFF12;
+  text-shadow: 1px 1px black, -1px -1px black;
 }
 
 .gameArea .handAnimate {
@@ -356,5 +356,6 @@ header .openModal:active {
   display: inline-block;
   text-align: center;
   width: 50px;
+  border: 3px solid black;
 }
 /*# sourceMappingURL=styles.css.map */
