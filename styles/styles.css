@@ -459,11 +459,15 @@ header .openModal:focus {
 }
 
 @media (max-width: 660px) {
+  .userPickModal .userPickContent {
+    padding: 20px 20px 10px;
+  }
   .userPickModal .userPickContent ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-bottom: 40px;
   }
   .userPickModal .userPickContent ul li {
     margin: 0 0 20px;
@@ -488,10 +492,20 @@ header .openModal:focus {
 }
 
 @media (max-width: 565px) {
+  header h1 {
+    font-size: 2.4rem;
+  }
   .scoreboard {
+    height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .scoreboard .score {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -506,7 +520,10 @@ header .openModal:focus {
   }
   .scoreboard #wins,
   .scoreboard #losses {
-    margin-bottom: 20px;
+    margin: 0 0 20px;
+  }
+  .results {
+    width: 70%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -89,8 +89,10 @@
 
     .userPickModal {
         .userPickContent {
+            padding: 20px 20px 10px;
             ul {
             flex-direction: column;
+            padding-bottom: 40px;
                 li {
                     margin: 0 0 20px;
                 }
@@ -114,18 +116,27 @@
 }
 
 @media (max-width: 565px) {
+
+
+    // HEADER
+
+    header {
+        h1 {
+            font-size: 2.4rem;
+        }
+    }
+
+    // SCOREBOARD
+
     .scoreboard {
-        // height: 100vh;
-        // width: 25%;
+        height: auto;
         display: flex;
         flex-direction: column;
-        // align-items: center;
-        // justify-content: center;
+        .score {
+            flex-direction: column;
+        }
         h3 {
-            // font-size: 2.5rem;
-            // padding: 10px;
             margin: 0;
-            // color: $accent;
             }
         p {
             font-size: 1.2rem;
@@ -133,14 +144,14 @@
         }
         #wins,
         #losses {
-            margin-bottom: 20px;
+            margin: 0 0 20px;
         }
-        // span {
-        //     background: $accent;
-        //     display: inline-block;
-        //     text-align: center;
-        //     width: 50px;
-        //     border: 3px solid black;
-        // }
     }
+
+    // RESULTS
+
+    .results {
+        width: 70%;
+    }
+
 }
