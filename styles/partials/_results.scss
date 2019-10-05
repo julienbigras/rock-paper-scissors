@@ -5,10 +5,11 @@
     align-items: center;
     background: $secondary;
     width: 40%;
-    margin: 0 auto;
+    margin: 0 auto 3%;
     p {
         font-weight: bold;
         text-transform: uppercase;
+        text-align: center;
         font-family: $mainFont;
         font-size: 1.5rem;
         padding: 25px 30px 20px;
