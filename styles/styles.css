@@ -349,7 +349,6 @@ header .openModal:focus {
   height: 100vh;
   width: 25%;
   font-family: "Luckiest Guy";
-  font-size: 1.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -372,6 +371,11 @@ header .openModal:focus {
   margin-bottom: 60px;
   color: #FBFF12;
   text-shadow: -1px -1px black, 1px 1px black, 2px -2px #FF206E, 3px -3px black, 4px -4px #FF206E, 5px -5px black, 6px -6px #FF206E, 7px -7px black, 8px -8px #FF206E, 9px -9px black;
+}
+
+.scoreboard p {
+  font-size: 1.8rem;
+  line-height: 2rem;
 }
 
 .scoreboard #wins,
@@ -455,6 +459,7 @@ header .openModal:focus {
   }
   .scoreboard p {
     font-size: 1.5rem;
+    line-height: 1.7rem;
     text-align: center;
   }
   .results {
@@ -519,7 +524,6 @@ header .openModal:focus {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    border: 1px solid red;
   }
   .scoreboard h3 {
     margin-right: 0;
@@ -527,7 +531,7 @@ header .openModal:focus {
   }
   .scoreboard p {
     font-size: 1.2rem;
-    border: 1px solid red;
+    line-height: 1.4rem;
   }
   .scoreboard #wins,
   .scoreboard #losses {
