@@ -151,6 +151,9 @@
         #losses {
             margin: 0 0 20px;
         }
+        span {
+            vertical-align: top;
+        }
     }
 
     // RESULTS
@@ -158,5 +161,4 @@
     .results {
         width: 70%;
     }
-
 }
