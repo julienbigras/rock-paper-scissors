@@ -512,6 +512,7 @@ header .openModal:focus {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-bottom: 30px;
   }
   .scoreboard .score {
     -webkit-box-orient: vertical;
