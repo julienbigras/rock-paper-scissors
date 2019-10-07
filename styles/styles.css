@@ -519,6 +519,7 @@ header .openModal:focus {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    border: 1px solid red;
   }
   .scoreboard h3 {
     margin-right: 0;
@@ -526,6 +527,7 @@ header .openModal:focus {
   }
   .scoreboard p {
     font-size: 1.2rem;
+    border: 1px solid red;
   }
   .scoreboard #wins,
   .scoreboard #losses {

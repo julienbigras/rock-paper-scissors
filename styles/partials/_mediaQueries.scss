@@ -139,6 +139,7 @@
         padding-bottom: 30px;
         .score {
             flex-direction: column;
+            border: 1px solid red;
         }
         h3 {
             margin-right: 0;
@@ -146,6 +147,7 @@
             }
         p {
             font-size: 1.2rem;
+            border: 1px solid red;
         }
         #wins,
         #losses {
