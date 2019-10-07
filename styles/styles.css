@@ -176,6 +176,17 @@ header .openModal:focus {
   cursor: pointer;
 }
 
+.userPickModal .userPickContent input[type="submit"] {
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 15px 40px;
+  text-transform: uppercase;
+  background: #FBFF12;
+  border: 3px solid black;
+  border-radius: 30px;
+  font-family: "Luckiest Guy";
+}
+
 .userPickModal .userPickContent input[type="submit"]:hover,
 .userPickModal .userPickContent input[type="submit"]:focus {
   background: #FF206E;
@@ -497,6 +508,7 @@ header .openModal:focus {
 @media (max-width: 565px) {
   header h1 {
     font-size: 2.4rem;
+    padding-top: 20px;
   }
   .scoreboard {
     height: auto;
