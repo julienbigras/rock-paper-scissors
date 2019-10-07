@@ -68,14 +68,7 @@
             cursor: pointer;
         }
         input[type="submit"] {
-            font-weight: bold;
-            font-size: 1rem;
-            padding: 15px 40px;
-            text-transform: uppercase;
-            background: $accent;
-            border: 3px solid black;
-            border-radius: 30px;
-            font-family: $mainFont;
+            -webkit-appearance: none;
         }
         input[type="submit"]:hover,
         input[type="submit"]:focus {
