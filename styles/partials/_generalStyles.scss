@@ -33,12 +33,12 @@ a {
 
 body {
     min-height: 100vh;
-    background: $primary;
     display: flex;
 }
 
 .gameContent {
     width: 75%;
+    background: $primary;
 }
 
 .button {
