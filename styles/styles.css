@@ -365,6 +365,19 @@ header .openModal:focus {
   border-left: 10px solid #FBFF12;
 }
 
+.scoreboard .scoreFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
 .scoreboard h3 {
   font-size: 2.5rem;
   padding: 10px;
@@ -373,22 +386,18 @@ header .openModal:focus {
   text-shadow: -1px -1px black, 1px 1px black, 2px -2px #FF206E, 3px -3px black, 4px -4px #FF206E, 5px -5px black, 6px -6px #FF206E, 7px -7px black, 8px -8px #FF206E, 9px -9px black;
 }
 
-.scoreboard p {
+.scoreboard p,
+.scoreboard .count {
   font-size: 1.8rem;
   line-height: 2rem;
 }
 
-.scoreboard #wins,
-.scoreboard #losses {
-  margin-bottom: 10%;
-}
-
-.scoreboard span {
+.scoreboard .count {
   background: #FBFF12;
   text-align: center;
-  padding: 0 12px;
+  width: 50px;
+  margin-left: 15px;
   border: 3px solid black;
-  vertical-align: center;
 }
 
 @media (max-width: 1068px) {
@@ -426,14 +435,12 @@ header .openModal:focus {
         -ms-flex-align: center;
             align-items: center;
   }
+  .scoreboard .scoreFlex {
+    margin: 0 20px 0 0;
+  }
   .scoreboard h3 {
     margin-bottom: 0;
     margin-right: 40px;
-  }
-  .scoreboard #wins,
-  .scoreboard #losses {
-    margin-bottom: 0;
-    margin-right: 20px;
   }
 }
 
@@ -453,6 +460,25 @@ header .openModal:focus {
   .gameArea .handContainer,
   .gameArea .handReverseContainer {
     width: 47%;
+  }
+  .scoreboard .scoreFlex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: 50px;
+  }
+  .scoreboard .scoreFlex:last-of-type {
+    margin-right: 0;
+  }
+  .scoreboard .count {
+    margin: 0;
   }
   .scoreboard h3 {
     font-size: 2rem;
@@ -525,6 +551,20 @@ header .openModal:focus {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .scoreboard .scoreFlex {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 160px;
+    margin: 0 0 20px 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .scoreboard .scoreFlex:last-of-type {
+    margin-bottom: 0;
+  }
   .scoreboard h3 {
     margin-right: 0;
     margin-top: 20px;
@@ -532,10 +572,6 @@ header .openModal:focus {
   .scoreboard p {
     font-size: 1.2rem;
     line-height: 1.4rem;
-  }
-  .scoreboard #wins,
-  .scoreboard #losses {
-    margin: 0 0 20px;
   }
   .results {
     width: 70%;
