@@ -372,6 +372,7 @@ header .openModal:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 20px;
 }
 
 .scoreboard h3 {
@@ -387,18 +388,14 @@ header .openModal:focus {
   line-height: 2rem;
 }
 
-.scoreboard #wins,
-.scoreboard #losses {
-  margin-bottom: 10%;
-}
-
 .scoreboard span {
+  font-size: 1.8rem;
   background: #FBFF12;
   display: inline-block;
   text-align: center;
+  margin-left: 15px;
   width: 50px;
   border: 3px solid black;
-  vertical-align: middle;
 }
 
 @media (max-width: 1068px) {
@@ -436,13 +433,15 @@ header .openModal:focus {
         -ms-flex-align: center;
             align-items: center;
   }
+  .scoreboard .scoreDiv {
+    margin-bottom: 0;
+  }
   .scoreboard h3 {
     margin-bottom: 0;
     margin-right: 40px;
   }
-  .scoreboard #wins,
-  .scoreboard #losses {
-    margin-bottom: 0;
+  .scoreboard #winCount,
+  .scoreboard #lossCount {
     margin-right: 20px;
   }
 }
@@ -464,13 +463,20 @@ header .openModal:focus {
   .gameArea .handReverseContainer {
     width: 47%;
   }
+  .scoreboard .scoreDiv {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-right: 20px;
+  }
   .scoreboard h3 {
     font-size: 2rem;
   }
-  .scoreboard p {
+  .scoreboard p,
+  .scoreboard span {
     font-size: 1.5rem;
     line-height: 1.7rem;
-    text-align: center;
   }
   .results {
     width: 55%;
@@ -535,17 +541,25 @@ header .openModal:focus {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .scoreboard .scoreDiv {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0 0 20px;
+  }
   .scoreboard h3 {
     margin-right: 0;
     margin-top: 20px;
   }
-  .scoreboard p {
+  .scoreboard p,
+  .scoreboard span {
     font-size: 1.2rem;
     line-height: 1.4rem;
   }
-  .scoreboard #wins,
-  .scoreboard #losses {
-    margin: 0 0 20px;
+  .scoreboard #winCount,
+  .scoreboard #lossCount {
+    margin-right: 0;
   }
   .results {
     width: 70%;
