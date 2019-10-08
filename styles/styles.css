@@ -584,6 +584,8 @@ header .openModal:focus {
   }
   .scoreboard .count {
     font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
   }
   .results {
     width: 70%;
