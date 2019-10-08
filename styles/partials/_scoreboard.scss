@@ -8,11 +8,6 @@
     align-items: center;
     justify-content: center;
     border-left: 10px solid $accent;
-    .scoreDiv {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-    }
     h3 {
         font-size: 2.5rem;
         padding: 10px;
@@ -34,18 +29,15 @@
         font-size: 1.8rem;
         line-height: 2rem;
     }
-    // #wins,
-    // #losses {
-    //     margin-bottom: 10%;
-    // }
+    #wins,
+    #losses {
+        margin-bottom: 10%;
+    }
     span {
-        font-size: 1.8rem;
         background: $accent;
         display: inline-block;
         text-align: center;
-        margin-left: 15px;
         width: 50px;
         border: 3px solid black;
-        // vertical-align: middle;
     }
 }

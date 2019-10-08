@@ -365,16 +365,6 @@ header .openModal:focus {
   border-left: 10px solid #FBFF12;
 }
 
-.scoreboard .scoreDiv {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 20px;
-}
-
 .scoreboard h3 {
   font-size: 2.5rem;
   padding: 10px;
@@ -388,12 +378,15 @@ header .openModal:focus {
   line-height: 2rem;
 }
 
+.scoreboard #wins,
+.scoreboard #losses {
+  margin-bottom: 10%;
+}
+
 .scoreboard span {
-  font-size: 1.8rem;
   background: #FBFF12;
   display: inline-block;
   text-align: center;
-  margin-left: 15px;
   width: 50px;
   border: 3px solid black;
 }
@@ -433,15 +426,13 @@ header .openModal:focus {
         -ms-flex-align: center;
             align-items: center;
   }
-  .scoreboard .scoreDiv {
-    margin-bottom: 0;
-  }
   .scoreboard h3 {
     margin-bottom: 0;
     margin-right: 40px;
   }
-  .scoreboard #winCount,
-  .scoreboard #lossCount {
+  .scoreboard #wins,
+  .scoreboard #losses {
+    margin-bottom: 0;
     margin-right: 20px;
   }
 }
@@ -463,20 +454,13 @@ header .openModal:focus {
   .gameArea .handReverseContainer {
     width: 47%;
   }
-  .scoreboard .scoreDiv {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-right: 20px;
-  }
   .scoreboard h3 {
     font-size: 2rem;
   }
-  .scoreboard p,
-  .scoreboard span {
+  .scoreboard p {
     font-size: 1.5rem;
     line-height: 1.7rem;
+    text-align: center;
   }
   .results {
     width: 55%;
@@ -541,25 +525,17 @@ header .openModal:focus {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .scoreboard .scoreDiv {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    margin: 0 0 20px;
-  }
   .scoreboard h3 {
     margin-right: 0;
     margin-top: 20px;
   }
-  .scoreboard p,
-  .scoreboard span {
+  .scoreboard p {
     font-size: 1.2rem;
     line-height: 1.4rem;
   }
-  .scoreboard #winCount,
-  .scoreboard #lossCount {
-    margin-right: 0;
+  .scoreboard #wins,
+  .scoreboard #losses {
+    margin: 0 0 20px;
   }
   .results {
     width: 70%;
