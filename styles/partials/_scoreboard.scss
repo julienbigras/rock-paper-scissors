@@ -31,23 +31,20 @@
             8px -8px $primary,
             9px -9px black;
         }
-    p,
-    .count {
+    p {
         font-size: 1.8rem;
         line-height: 2rem;
     }
-    // #wins,
-    // #losses {
-    //     margin-bottom: 10%;
-    // }
     .count {
         background: $accent;
-        text-align: center;
         width: 50px;
-        // padding: 0 12px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-left: 15px;
         border: 3px solid black;
-        // vertical-align: center;
+        font-size: 1.8rem;
     }
 }
 

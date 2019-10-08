@@ -80,16 +80,16 @@
         .scoreFlex:last-of-type {
             margin-right: 0;
         }
-        .count {
-            margin: 0;
-        }
         h3 {
             font-size: 2rem;
         }
         p {
             font-size: 1.5rem;
             line-height: 1.7rem;
-            text-align: center;
+        }
+        .count {
+            margin: 0;
+            font-size: 1.5rem;
         }
     }
 
@@ -174,6 +174,9 @@
         p {
             font-size: 1.2rem;
             line-height: 1.4rem;
+        }
+        .count {
+            font-size: 1.2rem;
         }
         // #wins,
         // #losses {
